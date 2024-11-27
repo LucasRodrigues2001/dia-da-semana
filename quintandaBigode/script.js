@@ -95,7 +95,25 @@ function comprarManga() {
             break;
 
     }
+}
 
+function comprarLaranja (){
+    var resultado
+    var carluc = Number (prompt(`O KG da Laranja-pera é de: R$ 5,00
+        O KG da Laranja-lima é de: R$ 2,00 
+        O KG da Laranja-bahia é de: R$ 3,50
+        __________________________________
+        Qual você deseja comprar? 
+        __________________________________
+        [1] pera 
+        [2] lima  
+        [3] bahia`))
+    var kilo = (prompt(`Quantos KG você deseja comprar`))
+    switch (carluc) {
+    case 1: 
+    resultado = kilo *  5.00
+    
+}
 
 }
 
