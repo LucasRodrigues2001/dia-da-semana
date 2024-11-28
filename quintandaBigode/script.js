@@ -53,12 +53,21 @@ function comprarMaça() {
     alert(`Você comprou ${kgMaca} KG de maçã e saiu por ${resultado}`)
 
 }
+function calcularPrecoManga (preco, marca) {
+    var kilo = (prompt(`Quantos KG você deseja comprar ?`))
+    var resultado = kilo * preco
+            alert(` O valor é de ${resultado.toLocaleString('pt-br',
+                {
+                    style: 'currency',
+                    currency: 'BRL',
+                })}`)
+}
 
 function comprarManga() {
 
 
     var resultado = 0
-    var carluc = Number (prompt(`O KG da manga Palmer é de: R$ 5,49
+    var carluc = Number(prompt(`O KG da manga Palmer é de: R$ 5,49
         O KG da manga Rosa é de: R$ 10,00 
         O KG da manga Tommy é de: R$ 2,99
         __________________________________
@@ -67,39 +76,44 @@ function comprarManga() {
         [1] Palmer 
         [2] Rosa  
         [3] Tommy`))
-    var kilo = (prompt(`Quantos KG você deseja comprar ?`))
+    
     switch (carluc) {
         case 1:
-            resultado = kilo * 5.49
-            alert(` O valor é de ${resultado.toLocaleString('pt-br',
-                {
-                    style: 'currency',
-                    currency: 'BRL',
-                })}`)
+            calcularPrecoManga (5.49, "Palmer")
             break;
         case 2:
-            resultado = kilo * 10.00
-            alert(` O valor é de ${resultado.toLocaleString('pt-br',
-                {
-                    style: 'currency',
-                    currency: 'BRL',
-                })}`)
+            calcularPrecoManga (10.00, "Rosa")
             break;
         case 3:
-            resultado = kilo * 2.99
-            alert(` O valor é de ${resultado.toLocaleString('pt-br',
-                {
-                    style: 'currency',
-                    currency: 'BRL',
-                })}`)
+            calcularPrecoManga (2.99, "Tommy")
             break;
 
     }
 }
 
-function comprarLaranja (){
-    var resultado
-    var carluc = Number (prompt(`O KG da Laranja-pera é de: R$ 5,00
+function calcularPrecoLaranja (preco, promocao, marca) {
+
+    
+    if (kilo > {promocao}) {
+        resultado = kilo * preco
+        alert(` você comprou a laranja pera ${kilo} KG e o valor é de  ${resultado.toLocaleString('pt-br',
+            {
+                style: 'currency',
+                currency: 'BRL',
+            })}`)
+    } else {
+        resultado = kilo * {preco}
+        alert(` você comprou a laranja pera ${kilo} KG e o valor ${resultado.toLocaleString(`pt-br`,
+            {
+                style: 'currency',
+                currency: 'BRL',
+            })}`)
+    }
+ }
+
+function comprarLaranja() {
+    var resultado = 0
+    var lucar = Number(prompt(`O KG da Laranja-pera é de: R$ 5,00
         O KG da Laranja-lima é de: R$ 2,00 
         O KG da Laranja-bahia é de: R$ 3,50
         __________________________________
@@ -109,34 +123,40 @@ function comprarLaranja (){
         [2] lima  
         [3] bahia`))
     var kilo = (prompt(`Quantos KG você deseja comprar`))
-    switch (carluc) {
-    case 1: 
-    resultado = kilo *  5.00
+    switch (lucar) {
+        case 1:
+
+        calcularPrecoLaranja (5.00, "Pera")
+            break;
+
+        case 2:
+            calcularPrecoLaranja (2.00, "Lima")
+            break;
     
-}
+        case 3:
+           
+        calcularPrecoLaranja (3.50, "Bahia")
+            break;
+    }}
 
-}
+            switch (inicioPrograma) {
+                case 1:
+                    comprarBanana()
+                    break;
 
-
-switch (inicioPrograma) {
-    case 1:
-        comprarBanana()
-        break;
-
-    case 2:
-        comprarMaça()
-        break;
-    case 3:
-        comprarManga()
-        break;
-    case 4:
-        alert("Laranja")
-        break;
-    case 5:
-        alert("Limão")
-        break;
-    default:
-        alert("Não existe a fruta que voce gosta")
-        alert("A fruta que você gosta vc chupa até o caroço???????")
-
-}
+                case 2:
+                    comprarMaça()
+                    break;
+                case 3:
+                    comprarManga()
+                    break;
+                case 4:
+                    comprarLaranja()
+                    break;
+                case 5:
+                    alert("Limão")
+                    break;
+                default:
+                    alert("Não existe a fruta que voce gosta")
+                    alert("A fruta que você gosta vc chupa até o caroço???????")
+            }
